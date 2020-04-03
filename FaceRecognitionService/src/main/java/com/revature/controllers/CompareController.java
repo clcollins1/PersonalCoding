@@ -16,7 +16,7 @@ import com.revature.services.CompareFacesService;
 public class CompareController {
 
 	@Autowired
-	CompareFacesService compare;
+	private CompareFacesService compare;
 	
 	
 	@PostMapping(value = "/compareFaces", consumes = { "multipart/form-data" })
