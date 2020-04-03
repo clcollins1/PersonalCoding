@@ -1,0 +1,19 @@
+<h1 class = "container justify-content-md-center">Welcome to my Likeness Percentage Generator</h1>
+
+<form [formGroup]="myForm" (ngSubmit) = "onSubmit()"  (ngReset) = "onReset()" class = "container">
+  <div class="form-group">
+    <img  [src]="url" class = "imgResize"> <br/>
+    <label for="firstPicLabel">Upload First Picture</label>
+    <input type="file" class="form-control-file col tightenUploads" (change) = "showPreview1($event)" accept = "image/*" id="pic1">
+    <img  [src]="url2" class = "imgResize"> <br/>
+    <label for="secondPicLabel">Upload Second Picture</label>
+    <input type="file" class="form-control-file col tightenUploads" (change) = "showPreview2($event)" accept = "image/*" id="pic2">
+  </div>
+  <div class = "container justify-content-md-around">
+    <button class = "col tighten" type = "submit">submit</button>
+    <button class = "col tighten" type = "reset">reset</button>
+    </div>
+</form>
+<div *ngIf = "likeness != null" class = "container justify-content-md-center">
+  <span>Similarity Results: %{{ likeness }}</span>
+</div>
