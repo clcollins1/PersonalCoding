@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CompareComponent implements OnInit {
 
-  serverUrl = 'http://localhost:8080/compare/compareFaces';
+  serverUrl = 'http://ec2-3-92-167-146.compute-1.amazonaws.com:8080/compare/compareFaces';
   url: string;
   url2: string;
   myForm: FormGroup;
@@ -27,7 +27,6 @@ export class CompareComponent implements OnInit {
 
   onSubmit() {
     const formData = new FormData();
-    console.log(this.myForm.value);
 
     formData.append('file1', this.myForm.get('file1').value);
     formData.append('file2', this.myForm.get('file2').value);
